@@ -206,12 +206,9 @@ export default function Page() {
 <div className="relative z-10 hidden md:block w-[500px] h-[500px] mt-12 md:mt-0">
   <Image
     src="/Design_sans_titre_1_-removebg-preview.PNG"
-    alt="Photo 1"
-    width={230}
-    height={230}
-    className="absolute -top-16 left-[65%] -translate-x-1/2 w-[170px] md:w-[230px] h-auto z-30 rounded-lg animate-fade-in"
-    priority
-  />
+            alt="Photo 1"
+            className="absolute -top-17 left-65 -translate-x-1/2 w-[170px] md:w-[230px] h-auto z-30 rounded-lg animate-fade-in"
+         />
   <Image
     src="/Design_sans_titre_6_-removebg-preview.png"
     alt="Photo 2"
