@@ -196,7 +196,7 @@ export default function Page() {
             className="absolute top-15 left-100 -translate-x-1/2 w-[180px] md:w-[220px] h-auto z-30 rounded-lg animate-fade-in"
           />
           <img
-            src="/Design_sans_titre_9_-removebg-preview.PNG"
+            src="/Design_sans_titre_10_-removebg-preview.png"
             alt="Photo 4"
             className="absolute top-67 left-106 -translate-x-1/2 w-[180px] md:w-[220px] h-auto z-30 rounded-lg"
           />
