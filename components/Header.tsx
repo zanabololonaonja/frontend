@@ -1,17 +1,18 @@
- // si tu es dans Next.js App Router
-
 "use client";
+
 import { useState } from "react";
 import Link from "next/link";
-
+import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Header() {
   const { lang, setLang } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+type Language = "fr" | "en" | "mg";
 
-  // Dictionnaire de traductions
+const languages: Language[] = ["fr", "en", "mg"];
+
   const translations = {
     fr: {
       home: "Accueil",
@@ -20,7 +21,7 @@ export default function Header() {
       projects: "Réalisations",
       news: "Actualités",
       contact: "Contact",
-      connecter:"se connecter",
+      connecter: "Se connecter",
       donate: "Faire un don",
       langLabel: "Français",
       flag: "🇫🇷",
@@ -32,7 +33,7 @@ export default function Header() {
       projects: "Projects",
       news: "News",
       contact: "Contact",
-      connecter:"log in ",
+      connecter: "Log in",
       donate: "Donate",
       langLabel: "English",
       flag: "🇬🇧",
@@ -44,76 +45,68 @@ export default function Header() {
       projects: "Tetikasa",
       news: "Vaovao",
       contact: "Fifandraisana",
-      connecter:"Hiditra",
+      connecter: "Hiditra",
       donate: "Fanomezana",
       langLabel: "Malagasy",
       flag: "🇲🇬",
     },
   };
 
-  const t = translations[lang]; // traduction active
+  const t = translations[lang];
 
   return (
-    <header className="fixed top-4 left-0 right-0 z-50">
-      <nav className="mx-2  backdrop-blur-md bg-white/50 shadow-md rounded-xl px-6 py-3 flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50">
+      <nav className="mx-4 md:mx-10 backdrop-blur-md bg-white/70 shadow-md rounded-xl px-6 py-3 flex items-center justify-between">
+        
         {/* Logo */}
-        <div className="flex items-center space-x-0">
-          <img className="h-13" />
+        <div className="flex items-center">
+          <Link href="/">
+            <Image
+              src="/logoremove.png"
+              alt="Logo"
+              width={60}
+              height={60}
+              className="object-contain"
+            />
+          </Link>
         </div>
 
-        {/* Menu desktop */}
-        <ul className="hidden font-bold md:flex space-x-4 text-lg text-gray-700 items-center">
-          <li>
-            <Link href="#home" className="hover:text-[#7c3b63] transition-colors duration-300">
-              {t.home}
-            </Link>
-          </li> 
+        {/* Menu Desktop */}
+        <ul className="hidden md:flex items-center space-x-4 font-bold text-gray-700 text-lg">
+          {[
+            { label: t.home, href: "#home" },
+            { label: t.about, href: "#about" },
+            { label: t.staff, href: "#staff" },
+            { label: t.projects, href: "#projects" },
+            { label: t.news, href: "/actualites" },
+            { label: t.contact, href: "#contact" },
+          ].map((item, i) => (
+            <li key={i} className={i !== 0 ? "border-l border-gray-300 pl-4" : ""}>
+              <Link
+                href={item.href}
+                className="hover:text-[#7c3b63] transition-colors duration-300"
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+
           <li className="border-l border-gray-300 pl-4">
-            <Link href="#about" className="hover:text-[#7c3b63] transition-colors duration-300">
-              {t.about}
+            <Link href="/login">
+              <button className="bg-white hover:bg-[#f3e5f0] text-[#9b4b7c] font-bold px-4 py-2 rounded-lg shadow-md transition duration-300">
+                {t.connecter}
+              </button>
             </Link>
-          </li>
-          <li className="border-l border-gray-300 pl-4">
-            <Link href="#staff" className="hover:text-[#7c3b63] transition-colors duration-300">
-              {t.staff}
-            </Link>
-          </li>
-          <li className="border-l border-gray-300 pl-4">
-            <Link href="#projects" className="hover:text-[#7c3b63] transition-colors duration-300">
-              {t.projects}
-            </Link>
-          </li>
-         {/* Dans votre composant où se trouve le bouton "Voir les actualités" */}
-          <li className="border-l border-gray-300 pl-4">
-            <Link 
-  href="/actualites"
-  className="hover:text-[#7c3b63] transition-colors duration-300"
->
- {t.news}
- 
-</Link>
           </li>
 
           <li className="border-l border-gray-300 pl-4">
-            <Link href="#contact" className="hover:text-[#7c3b63] transition-colors duration-300">
-              {t.contact}   
+            <Link href="/login">
+              <button className="bg-[#9b4b7c] hover:bg-[#7c3b63] text-white font-bold px-4 py-2 rounded-lg shadow-md transition duration-300">
+                {t.donate}
+              </button>
             </Link>
           </li>
-   <li className="border-l border-gray-300 pl-4">
-  <Link href="/login">
-    <button className="flex items-center hover:bg-[#7c3b63] cursor-pointer text-#9b4b7c font-bold px-4 py-2 rounded-lg shadow-md transition duration-300">
-   {t.connecter}
-    </button>
-  </Link>
-</li>
-          {/* Bouton Faire un don */}
-         <li className="border-l border-gray-300 pl-4">
-  <Link href="/login">
-    <button className="flex items-center bg-[#9b4b7c] hover:bg-[#7c3b63] cursor-pointer text-white font-bold px-4 py-2 rounded-lg shadow-md transition duration-300">
-   {t.donate}
-    </button>
-  </Link>
-</li>
+
           {/* Sélecteur de langue */}
           <li className="relative border-l border-gray-300 pl-4">
             <button
@@ -123,43 +116,32 @@ export default function Header() {
               {t.flag} ▾
             </button>
 
-            {langOpen && (
-              <div className="absolute right-0 mt-2 w-16 bg-white shadow-md rounded-md py-2 z-50">
-                <button
-                  onClick={() => {
-                    setLang("fr");
-                    setLangOpen(false);
-                  }}
-                  className="block w-full text-center px-1 py-2 hover:bg-gray-100"
-                >
-                  🇫🇷
-                </button>
-                <button
-                  onClick={() => {
-                    setLang("en");
-                    setLangOpen(false);
-                  }}
-                  className="block w-full text-center px-1 py-2 hover:bg-gray-100"
-                >
-                  🇬🇧
-                </button>
-                <button
-                  onClick={() => {
-                    setLang("mg");
-                    setLangOpen(false);
-                  }}
-                  className="block w-full text-center px-1 py-2 hover:bg-gray-100"
-                >
-                  🇲🇬
-                </button>
-              </div>
-            )}
+           {langOpen && (
+  <div className="mt-2 bg-white shadow-md rounded-md py-2">
+    {languages.map((l) => (
+      <button
+        key={l}
+        onClick={() => {
+          setLang(l);        // OK, l est Language
+          setLangOpen(false);
+          setIsOpen(false);
+        }}
+        className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+      >
+        {translations[l].flag} {translations[l].langLabel}  {/* OK, l est Language */}
+      </button>
+    ))}
+  </div>
+)}
           </li>
         </ul>
 
-        {/* Hamburger bouton */}
+        {/* Hamburger Mobile */}
         <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-gray-700"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -167,98 +149,85 @@ export default function Header() {
               stroke="currentColor"
               className="w-6 h-6"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             </svg>
           </button>
         </div>
       </nav>
 
-      {/* Menu mobile */}
+      {/* Menu Mobile */}
       {isOpen && (
-        <div className="md:hidden bg-white/90 backdrop-blur-md shadow-md rounded-xl mt-2 mx-10 p-4">
+        <div className="md:hidden bg-white/90 backdrop-blur-md shadow-md rounded-xl mt-2 mx-4 p-4">
           <ul className="flex flex-col space-y-4 text-gray-700 font-semibold">
-            <li>
-              <Link href="#home" onClick={() => setIsOpen(false)}>
-                {t.home}
-              </Link>
-            </li>
-            <li>
-              <Link href="#about" onClick={() => setIsOpen(false)}>
-                {t.about}
-              </Link>
-            </li>
-            <li>
-              <Link href="#staff" onClick={() => setIsOpen(false)}>
-                {t.staff}
-              </Link>
-            </li>
-            <li>
-              <Link href="#projects" onClick={() => setIsOpen(false)}>
-                {t.projects}
-              </Link>
-            </li>
-            <li>
-              <Link href="#contact" onClick={() => setIsOpen(false)}>
-                {t.contact}
-              </Link>
-            </li>
+            {[
+              { label: t.home, href: "#home" },
+              { label: t.about, href: "#about" },
+              { label: t.staff, href: "#staff" },
+              { label: t.projects, href: "#projects" },
+              { label: t.news, href: "/actualites" },
+              { label: t.contact, href: "#contact" },
+            ].map((item, i) => (
+              <li key={i}>
+                <Link
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className="block"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+
             <li>
               <Link href="/login">
-                <button className="flex items-center bg-[#9b4b7c] hover:bg-[#7c3b63] cursor-pointer text-white font-semibold px-4 py-2 rounded-lg shadow-md transition duration-300">
-                  <span>{t.donate}</span>
+                <button className="bg-white hover:bg-[#f3e5f0] text-[#9b4b7c] font-bold px-4 py-2 rounded-lg shadow-md w-full">
+                  {t.connecter}
                 </button>
               </Link>
             </li>
+
             <li>
-              {/* Sélecteur langue mobile */}
+              <Link href="/login">
+                <button className="bg-[#9b4b7c] hover:bg-[#7c3b63] text-white font-bold px-4 py-2 rounded-lg shadow-md w-full">
+                  {t.donate}
+                </button>
+              </Link>
+            </li>
+
+            <li>
               <button
                 onClick={() => setLangOpen(!langOpen)}
-                className="text-gray-700 hover:text-[#7c3b63] transition-colors duration-300"
+                className="w-full text-left text-gray-700 hover:text-[#7c3b63] transition-colors duration-300"
               >
                 {t.langLabel} ▾
               </button>
+
               {langOpen && (
-                <div className="mt-2 bg-white shadow-md rounded-md py-2">
-                  <button
-                    onClick={() => {
-                      setLang("fr");
-                      setLangOpen(false);
-                    }}
-                    className="block w-full text-left px-4 py-2 hover:bg-gray-100"
-                  >
-                    Français
-                  </button>
-                  <button
-                    onClick={() => {
-                      setLang("en");
-                      setLangOpen(false);
-                    }}
-                    className="block w-full text-left px-4 py-2 hover:bg-gray-100"
-                  >
-                    English
-                  </button>
-                  <button
-                    onClick={() => {
-                      setLang("mg");
-                      setLangOpen(false);
-                    }}
-                    className="block w-full text-left px-4 py-2 hover:bg-gray-100"
-                  >
-                    Malagasy
-                  </button>
-                </div>
-              )}
+  <div className="mt-2 bg-white shadow-md rounded-md py-2">
+    {languages.map((l) => (
+      <button
+        key={l}
+        onClick={() => {
+          setLang(l);        // OK, l est Language
+          setLangOpen(false);
+          setIsOpen(false);
+        }}
+        className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+      >
+        {translations[l].flag} {translations[l].langLabel}  {/* OK, l est Language */}
+      </button>
+    ))}
+  </div>
+)}
             </li>
           </ul>
         </div>
       )}
-
-      {/* Logo */}
-      <img
-        src="/logoremove.png"
-        alt="Logo"
-        className="h-24 fixed top-1 left-11"
-      />
     </header>
   );
 }
