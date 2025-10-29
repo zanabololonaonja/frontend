@@ -107,7 +107,7 @@ export default function Page() {
     fr: {
       title: "ONG Ndao Hifanosika",
       subtitle:
-        "Noussssssss croyons que chaque jeune, chaque enfant et chaque femme a le potentiel de transformer son avenir. Notre ONG accompagne les entrepreneurs, forme les leaders de demain et soutient les initiatives locales pour bâtir un avenir durable à Madagascar.",
+        "Nous croyons que chaque jeune, chaque enfant et chaque femme a le potentiel de transformer son avenir. Notre ONG accompagne les entrepreneurs, forme les leaders de demain et soutient les initiatives locales pour bâtir un avenir durable à Madagascar.",
       donate: "Faire un don",
       learnMore: "En savoir plus",
     },
@@ -183,27 +183,27 @@ export default function Page() {
   <img
     src="/Design_sans_titre_1_-removebg-preview.png"
     alt="Photo 1"
-    className="absolute -top-[68px] left-[65%] -translate-x-1/2 w-[170px] md:w-[230px] h-auto z-30 rounded-lg animate-fade-in"
+    className="absolute -top-[65px] left-[50%] -translate-x-1/2 w-[170px] md:w-[230px] h-auto z-30 rounded-lg animate-fade-in"
   />
   <img
     src="/Design sans titre(8).png"
     alt="Photo 2"
-    className="absolute top-[112px] left-[36%] -translate-x-1/2 w-[280px] md:w-[350px] h-auto z-20 rounded-lg animate-fade-in"
+    className="absolute top-[112px] left-[27%] -translate-x-1/2 w-[280px] md:w-[350px] h-auto z-20 rounded-lg animate-fade-in"
   />
   <img
     src="/Design_sans_titre_6_-removebg-preview.png"
     alt="Photo 3"
-    className="absolute top-[60px] left-[100%] -translate-x-1/2 w-[180px] md:w-[220px] h-auto z-30 rounded-lg animate-fade-in"
+    className="absolute top-[57px] left-[80%] -translate-x-1/2 w-[180px] md:w-[220px] h-auto z-30 rounded-lg animate-fade-in"
   />
   <img
     src="/Design_sans_titre_9_-removebg-preview.png"
     alt="Photo 4"
-    className="absolute top-[268px] left-[106%] -translate-x-1/2 w-[180px] md:w-[220px] h-auto z-30 rounded-lg"
+    className="absolute top-[267px] left-[82%] -translate-x-1/2 w-[180px] md:w-[220px] h-auto z-30 rounded-lg"
   />
   <img
     src="/Design_sans_titre_10_-removebg-preview.png"
     alt="Photo 5"
-    className="absolute top-[424px] left-[71%] -translate-x-1/2 w-[180px] md:w-[239px] h-auto z-30 rounded-lg"
+    className="absolute top-[422px] left-[55%] -translate-x-1/2 w-[180px] md:w-[239px] h-auto z-30 rounded-lg"
   />
 </div>
 
