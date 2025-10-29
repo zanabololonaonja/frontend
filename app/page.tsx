@@ -107,7 +107,7 @@ export default function Page() {
     fr: {
       title: "ONG Ndao Hifanosika",
       subtitle:
-        "Nous croyons que chaque jeune, chaque enfant et chaque femme a le potentiel de transformer son avenir. Notre ONG accompagne les entrepreneurs, forme les leaders de demain et soutient les initiatives locales pour bâtir un avenir durable à Madagascar.",
+        "Noussssssss croyons que chaque jeune, chaque enfant et chaque femme a le potentiel de transformer son avenir. Notre ONG accompagne les entrepreneurs, forme les leaders de demain et soutient les initiatives locales pour bâtir un avenir durable à Madagascar.",
       donate: "Faire un don",
       learnMore: "En savoir plus",
     },
