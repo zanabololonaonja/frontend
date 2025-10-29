@@ -1,3 +1,5 @@
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
 @import "tailwindcss";
 
 :root {
@@ -71,12 +73,7 @@ body {
 }
 
 .animate-slide-up-delay-2 {
-  animation: slide-up 1.5s 1s forwards;
-}
-
-
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
+  animation: slide-up 1.5s 1s forwards;}
 
 
 

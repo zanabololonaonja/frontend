@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,9 +12,9 @@ export default function Header() {
     <header className="fixed top-4 left-0 right-0 z-50">
       <nav className="mx-10 backdrop-blur-md bg-white/50 shadow-md rounded-xl px-6 py-3 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
+        {/* <div className="flex items-center space-x-2">
           <img className="h-13" />
-        </div>
+        </div> */}
 
         {/* Menu desktop */}
         <ul className="hidden font-bold md:flex space-x-6 text-lg text-gray-700 items-center">
@@ -182,11 +183,9 @@ export default function Header() {
       )}
 
       {/* Logo */}
-      <img
-        src="/logoremove.png"
-        alt="Logo"
-        className="h-24 fixed top-1 left-11"
-      />
+<Image src="/logo.jpg" alt="Logo" className="LOGO" width={50} height={50} />
+
+
     </header>
   );
 }
