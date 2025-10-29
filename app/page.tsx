@@ -213,7 +213,7 @@ export default function Page() {
     priority
   />
   <Image
-    src="/Design sans titre(8).PNG"
+    src="/Design_sans_titre_6_-removebg-preview.png"
     alt="Photo 2"
     width={350}
     height={350}
@@ -229,7 +229,7 @@ export default function Page() {
     priority
   />
   <Image
-    src="/Design_sans_titre_9_-removebg-preview.PNG"
+    src="/Design_sans_titre_10_-removebg-preview.png"
     alt="Photo 4"
     width={220}
     height={220}
