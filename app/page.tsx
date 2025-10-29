@@ -210,36 +210,27 @@ export default function Page() {
             className="absolute -top-17 left-65 -translate-x-1/2 w-[170px] md:w-[230px] h-auto z-30 rounded-lg animate-fade-in"
          />
   <Image
-    src="/Design_sans_titre_6_-removebg-preview.png"
-    alt="Photo 2"
-    width={350}
-    height={350}
-    className="absolute top-28 left-[36%] -translate-x-1/2 w-[280px] md:w-[350px] h-auto z-20 rounded-lg animate-fade-in"
-    priority
+     src="/Design sans titre(8).PNG"
+            alt="Photo 2"
+            className="absolute top-28 left-36 -translate-x-1/2 w-[280px] md:w-[350px] h-auto z-20 rounded-lg animate-fade-in"
+        
   />
   <Image
     src="/Design_sans_titre_6_-removebg-preview.png"
-    alt="Photo 3"
-    width={220}
-    height={220}
-    className="absolute top-16 left-[100%] -translate-x-1/2 w-[180px] md:w-[220px] h-auto z-30 rounded-lg animate-fade-in"
-    priority
+            alt="Photo 3"
+            className="absolute top-15 left-100 -translate-x-1/2 w-[180px] md:w-[220px] h-auto z-30 rounded-lg animate-fade-in"
+         
   />
   <Image
-    src="/Design_sans_titre_10_-removebg-preview.png"
-    alt="Photo 4"
-    width={220}
-    height={220}
-    className="absolute top-[67%] left-[106%] -translate-x-1/2 w-[180px] md:w-[220px] h-auto z-30 rounded-lg animate-fade-in"
-    priority
-  />
+    src="/Design_sans_titre_9_-removebg-preview.PNG"
+            alt="Photo 4"
+            className="absolute top-67 left-106 -translate-x-1/2 w-[180px] md:w-[220px] h-auto z-30 rounded-lg"
+          />
   <Image
     src="/Design_sans_titre_10_-removebg-preview.png"
-    alt="Photo 5"
-    width={239}
-    height={239}
-    className="absolute top-[106%] left-[71%] -translate-x-1/2 w-[180px] md:w-[239px] h-auto z-30 rounded-lg animate-fade-in"
-    priority
+            alt="Photo 5"
+            className="absolute top-106 left-71 -translate-x-1/2 w-[180px] md:w-[239px] h-auto z-30 rounded-lg"
+       
   />
 </div>
 

@@ -55,24 +55,25 @@ const languages: Language[] = ["fr", "en", "mg"];
   const t = translations[lang];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
-      <nav className="mx-4 md:mx-10 backdrop-blur-md bg-white/70 shadow-md rounded-xl px-6 py-3 flex items-center justify-between">
-        
+    <header className="fixed top-4 left-0 right-0 z-50">
+      <nav className="mx-2  backdrop-blur-md bg-white/50 shadow-md rounded-xl px-6 py-3 flex items-center justify-between">
+        {/* Logo */}
+       
         {/* Logo */}
         <div className="flex items-center">
           <Link href="/">
             <Image
               src="/logoremove.png"
               alt="Logo"
-              width={60}
-              height={60}
-              className="object-contain"
+              className="h-24 fixed top-1 left-11"
             />
           </Link>
         </div>
 
         {/* Menu Desktop */}
-        <ul className="hidden md:flex items-center space-x-4 font-bold text-gray-700 text-lg">
+   
+           <ul className="hidden font-bold md:flex space-x-4 text-lg text-gray-700 items-center">
+          <li></li>
           {[
             { label: t.home, href: "#home" },
             { label: t.about, href: "#about" },
