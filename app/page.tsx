@@ -5,13 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Bebas_Neue } from "next/font/google";
 import { useLanguage } from "@/contexts/LanguageContext";
-// import { motion, AnimatePresence } from "framer-motion";
-
-// import APropos from "@/components/APropos";
-// import Temoinage from "@/components/Temoinage";
-// import Partenaire from "@/components/Partenaire";
-// import Realisation from "@/components/Realisation";
-// import Footer from "@/components/Footer";
 
 const bebas_Neue = Bebas_Neue({
   subsets: ["latin"],
@@ -209,20 +202,52 @@ export default function Page() {
         </div>
 
         {/* Images décoratives */}
-        <div className="relative z-10 hidden md:block w-[500px] h-[500px] mt-12 md:mt-0">
-          {["Design_sans_titre_1_-removebg-preview.PNG","Design sans titre(8).PNG","Design_sans_titre_6_-removebg-preview.png","Design_sans_titre_9_-removebg-preview.PNG","Design_sans_titre_10_-removebg-preview.png"].map((img, i) => (
-            <img key={i} src={`/${img}`} alt={`Photo ${i+1}`} className={`absolute rounded-lg animate-fade-in`} />
-          ))}
-        </div>
+       {/* Images décoratives */}
+<div className="relative z-10 hidden md:block w-[500px] h-[500px] mt-12 md:mt-0">
+  <Image
+    src="/Design_sans_titre_1_-removebg-preview.PNG"
+    alt="Photo 1"
+    width={230}
+    height={230}
+    className="absolute -top-16 left-[65%] -translate-x-1/2 w-[170px] md:w-[230px] h-auto z-30 rounded-lg animate-fade-in"
+    priority
+  />
+  <Image
+    src="/Design sans titre(8).PNG"
+    alt="Photo 2"
+    width={350}
+    height={350}
+    className="absolute top-28 left-[36%] -translate-x-1/2 w-[280px] md:w-[350px] h-auto z-20 rounded-lg animate-fade-in"
+    priority
+  />
+  <Image
+    src="/Design_sans_titre_6_-removebg-preview.png"
+    alt="Photo 3"
+    width={220}
+    height={220}
+    className="absolute top-16 left-[100%] -translate-x-1/2 w-[180px] md:w-[220px] h-auto z-30 rounded-lg animate-fade-in"
+    priority
+  />
+  <Image
+    src="/Design_sans_titre_9_-removebg-preview.PNG"
+    alt="Photo 4"
+    width={220}
+    height={220}
+    className="absolute top-[67%] left-[106%] -translate-x-1/2 w-[180px] md:w-[220px] h-auto z-30 rounded-lg animate-fade-in"
+    priority
+  />
+  <Image
+    src="/Design_sans_titre_10_-removebg-preview.png"
+    alt="Photo 5"
+    width={239}
+    height={239}
+    className="absolute top-[106%] left-[71%] -translate-x-1/2 w-[180px] md:w-[239px] h-auto z-30 rounded-lg animate-fade-in"
+    priority
+  />
+</div>
+
       </section>
 
-      {/* <APropos lang={lang} />
-      <Temoinage lang={lang} /> */}
-      {/* <Partenaire lang={lang} />
-      <div style={{ marginTop: "-350px", position: "relative", zIndex: 10 }}>
-        <Realisation lang={lang} />
-      </div>
-      <Footer lang={lang} /> */}
     </div>
   );
 }
