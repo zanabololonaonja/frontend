@@ -1,22 +1,50 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Bebas_Neue } from "next/font/google";
+import Header from "@/components/Header";
 
 const bebas_Neue = Bebas_Neue({
   subsets: ["latin"],
   weight: ["400"],
 });
 
-export default function Home() {
+export default function Page() {
+  const [showVideo, setShowVideo] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowVideo(false);
+    }, 2000); // durée du splash vidéo
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (showVideo) {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
+        <video
+          src="/Logo-1-[remix] (1).mp4"
+          autoPlay
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        />
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="pt-20">
+      <Header />
+
       {/* Section Home */}
       <section className="relative min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-16 overflow-visible">
         <div className="relative z-10 max-w-xl space-y-6 text-center md:text-left">
           <h1
-            className={`mt-20 text-6xl md:text-9xl font-bold text-black tracking-wider ${bebas_Neue.className}`}
+            className={`mt-20 text-6xl md:text-7xl font-bold text-black tracking-wider ${bebas_Neue.className}`}
           >
             ONG Ndao Hifanosika
           </h1>
@@ -45,21 +73,14 @@ export default function Home() {
             alt="Photo 1"
             width={230}
             height={230}
-            className="absolute -top-[17px] left-[65px] rounded-lg"
+            className="absolute -top-16 left-16 w-[230px] rounded-lg"
           />
           <Image
             src="/Design sans titre(8).PNG"
-            alt="Photo 2"
+            alt="Photo 3"
             width={350}
             height={350}
-            className="absolute top-[28px] left-[36px] rounded-lg"
-          />
-          <Image
-            src="/Design_sans_titre_6_-removebg-preview.png"
-            alt="Photo 3"
-            width={220}
-            height={220}
-            className="absolute top-[15px] left-[100px] rounded-lg"
+            className="absolute top-28 left-36 w-[350px] rounded-lg"
           />
         </div>
       </section>
