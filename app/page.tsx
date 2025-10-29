@@ -181,12 +181,12 @@ export default function Page() {
         {/* Images décoratives */}
        <div className="relative z-10 hidden md:block w-[500px] h-[500px] mt-12 md:mt-0">
   <img
-    src="/Design_sans_titre_1_-removebg-preview.PNG"
+    src="/Design_sans_titre_1_-removebg-preview.png"
     alt="Photo 1"
     className="absolute -top-[68px] left-[65%] -translate-x-1/2 w-[170px] md:w-[230px] h-auto z-30 rounded-lg animate-fade-in"
   />
   <img
-    src="/Design sans titre(8).PNG"
+    src="/Design sans titre(8).png"
     alt="Photo 2"
     className="absolute top-[112px] left-[36%] -translate-x-1/2 w-[280px] md:w-[350px] h-auto z-20 rounded-lg animate-fade-in"
   />
@@ -196,7 +196,7 @@ export default function Page() {
     className="absolute top-[60px] left-[100%] -translate-x-1/2 w-[180px] md:w-[220px] h-auto z-30 rounded-lg animate-fade-in"
   />
   <img
-    src="/Design_sans_titre_9_-removebg-preview.PNG"
+    src="/Design_sans_titre_9_-removebg-preview.png"
     alt="Photo 4"
     className="absolute top-[268px] left-[106%] -translate-x-1/2 w-[180px] md:w-[220px] h-auto z-30 rounded-lg"
   />
