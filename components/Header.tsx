@@ -14,7 +14,7 @@ export default function Header() {
   // Dictionnaire de traductions
   const translations = {
     fr: {
-      home: "Accueilaaaa",
+      home: "Accueil",
       about: "À propos",
       staff: "Témoignages",
       projects: "Réalisations",
