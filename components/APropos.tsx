@@ -152,7 +152,7 @@ export default function APropos({ lang = "fr", setLang }: { lang?: string; setLa
       <div className="absolute inset-0 bg-[#1e7ea1] rounded-[8rem] transform skew-y-5"></div>
 
       {/* Sélecteur de langue */}
-   
+
 
       {/* Contenu principal */}
       <div className="relative z-10 flex flex-col items-center text-center -mt-1">
@@ -227,39 +227,34 @@ export default function APropos({ lang = "fr", setLang }: { lang?: string; setLa
               >
                 ✖
               </button>
-      <HTMLFlipBook
-  width={300}
-  height={500}
-
-  minWidth={300}
-  maxWidth={600}
-  minHeight={400}
-  maxHeight={800}
-
-  className="my-flip-book"
-  showCover={false}
-  style={{ margin: "0 auto" }}
-
-  startPage={0}
-  size="stretch"
+             
+             
+             
+     <HTMLFlipBook
+ width={830}
+  height={540}
+  className="shadow-2xl rounded-xl"
+  size="fixed"
+  minWidth={0}
+  minHeight={0}
+  maxWidth={Infinity}
+  maxHeight={Infinity}
   drawShadow={true}
-  flippingTime={600}
+  flippingTime={1000}
   usePortrait={true}
+  startZIndex={0}
+  autoSize={true}
+  maxShadowOpacity={1}
+  showCover={false}
   mobileScrollSupport={true}
-  startZIndex={5}
-
-  /* ✅ Props obligatoires */
   clickEventForward={true}
   useMouseEvents={true}
   swipeDistance={30}
-  showPageCorners={true}
+  showPageCorners={false}
   disableFlipByClick={false}
-
-  /* ✅ Les 2 derniers requis */
-  autoSize={true}
-  maxShadowOpacity={0.5}
+  style={{}}
+  startPage={0}
 >
-
                 {/* Page 1 */}
                 <div className="relative w-full h-full">
                   <img
