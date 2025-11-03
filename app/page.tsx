@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import APropos from "@/components/APropos";
 import Temoinage from "@/components/Temoinage";
+import Partenaire from "@/components/Partenaire";
 import Link from "next/link";
 import { Bebas_Neue } from "next/font/google";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -217,6 +218,10 @@ export default function Page() {
       
         <div>
         <Temoinage lang={lang} />
+      </div>
+
+        <div>
+        <Partenaire lang={lang} />
       </div>
     </div>
   );
