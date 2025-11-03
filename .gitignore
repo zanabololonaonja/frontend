@@ -49,6 +49,4 @@ next-env.d.ts
 *.7z
 *.iso
 *.psd
-*.jpg
-*.jpeg
-*.png
+
