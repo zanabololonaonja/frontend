@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from 'next/image';
 
 // Traductions pour la section témoignages
 const testimonialsTranslations = {
@@ -150,21 +151,21 @@ export default function Temoinage({ lang }: TemoinageProps) {
   // Utiliser les traductions selon la langue sélectionnée
   const t = testimonialsTranslations[lang as keyof typeof testimonialsTranslations] || testimonialsTranslations.fr;
 
-  const prev = () => {
-    setStartIndex((prevIndex) =>
-      prevIndex - itemsPerPage < 0
-        ? t.testimonials.length - itemsPerPage
-        : prevIndex - itemsPerPage
-    );
-  };
-
-  const next = () => {
+  const next = useCallback(() => {
     setStartIndex((prevIndex) =>
       prevIndex + itemsPerPage >= t.testimonials.length
         ? 0
         : prevIndex + itemsPerPage
     );
-  };
+  }, [t.testimonials.length]);
+
+  const prev = useCallback(() => {
+    setStartIndex((prevIndex) =>
+      prevIndex - itemsPerPage < 0
+        ? t.testimonials.length - itemsPerPage
+        : prevIndex - itemsPerPage
+    );
+  }, [t.testimonials.length]);
 
   const currentTestimonials = t.testimonials.slice(
     startIndex,
@@ -178,7 +179,7 @@ export default function Temoinage({ lang }: TemoinageProps) {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [startIndex, t.testimonials.length]);
+  }, [next]); // Correction : ajout de 'next' comme dépendance
 
   return (
     <section id="staff" className="min-h-screen p-8 relative">
@@ -193,17 +194,21 @@ export default function Temoinage({ lang }: TemoinageProps) {
 
           <div className="flex gap-2">
             <button onClick={prev}>
-              <img
+              <Image
                 src="/image.png"
                 alt="Précédent"
-                className="w-14 h-13 cursor-pointer ml-17"
+                width={56}
+                height={52}
+                className="cursor-pointer ml-17"
               />
             </button>
             <button onClick={next}>
-              <img
+              <Image
                 src="/next.png"
                 alt="Suivant"
-                className="w-14 h-13 cursor-pointer"
+                width={56}
+                height={52}
+                className="cursor-pointer"
               />
             </button>
           </div>
@@ -217,7 +222,7 @@ export default function Temoinage({ lang }: TemoinageProps) {
       {/* Affichage des témoignages */}
       <div className="testimonials flex justify-center gap-6 flex-wrap mt-8 overflow-hidden relative">
         <AnimatePresence mode="wait">
-          {currentTestimonials.map((t, i) => (
+          {currentTestimonials.map((testimonial, i) => (
             <motion.figure
               key={i + startIndex}
               className="snip1157 w-80 text-center relative"
@@ -227,18 +232,21 @@ export default function Temoinage({ lang }: TemoinageProps) {
               transition={{ duration: 0.5 }}
             >
               <blockquote>
-                "{t.text}"
+                &quot;{testimonial.text}&quot; {/* Correction : guillemets échappés */}
                 <div className="arrow"></div>
               </blockquote>
-              <img
+              <Image
                 className="avatar mx-auto rounded-full w-24 h-24 mt-4"
-                src={t.img}
-                alt={t.name}
+                src={testimonial.img}
+                alt={testimonial.name}
+                width={96}
+                height={96}
+                unoptimized // Pour les images externes
               />
               <div className="author mt-2">
                 <h5>
-                  {t.name}{" "}
-                  <span style={{ fontFamily: "bold" }}>{t.role}</span>
+                  {testimonial.name}{" "}
+                  <span style={{ fontFamily: "bold" }}>{testimonial.role}</span>
                 </h5>
               </div>
             </motion.figure>
