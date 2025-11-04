@@ -48,7 +48,9 @@ const footerTexts = {
     about: "Momba antsika",
     projects: "Tetik'asantsika",
     testimonials: "Fijerena",
+    Réalisations:"zavabita",
     partners: "Mpiara-miasa",
+
     contact: "Fifandraisana",
     contactTitle: "Fifandraisana",
     address: "Lot 28TB/3609 Talatamaty ambany Fianarantsoa, Madagasikara",
