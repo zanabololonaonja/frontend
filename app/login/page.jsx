@@ -33,47 +33,39 @@ export default function Login() {
     });
   };
 
-  const handleSubmit = async (e) => {
+    const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setMessage('');
 
     try {
-      const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
-      
+      // ✅ Détecte production ou local
+      const API_URL = process.env.NEXT_PUBLIC_API_URL
+        ? process.env.NEXT_PUBLIC_API_URL
+        : 'http://localhost:5000';
+      console.log('🌐 API_URL utilisée:', API_URL);
+
       if (isLogin) {
         // Connexion
         const response = await fetch(`${API_URL}/api/auth/login`, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            email: formData.email,
-            password: formData.password
-          })
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: formData.email, password: formData.password })
         });
 
         const data = await response.json();
         console.log('🔐 Réponse login:', data);
 
         if (response.ok && data.success) {
-          // Connexion via AuthContext
           login(data.token, data.user);
-          
           console.log('✅ Login réussi - Redirection:', data.user.role);
-          
-          // ✅ Redirection selon le rôle
+
           switch (data.user.role) {
             case 'admin':
               router.push('/admin/dashboard');
               break;
             case 'personnel':
-              if (data.user.statut === 'actif') {
-                router.push('/personnel/dashboard');
-              } else {
-                router.push('/pending-validation');
-              }
+              router.push(data.user.statut === 'actif' ? '/personnel/dashboard' : '/pending-validation');
               break;
             case 'donateur':
               router.push('/donateur');
@@ -88,35 +80,26 @@ export default function Login() {
         // Inscription
         const response = await fetch(`${API_URL}/api/auth/register`, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData)
         });
 
         const data = await response.json();
         console.log('🔐 Réponse inscription:', data);
 
-        if (response.ok) {
-          setMessage(data.message);
-          if (data.success) {
-            if (data.token && data.user) {
-              login(data.token, data.user);
+        setMessage(data.message || '');
+        if (response.ok && data.success && data.token && data.user) {
+          login(data.token, data.user);
 
-              // ✅ Redirection selon le rôle après inscription
-              if (data.user.role === 'personnel' && data.user.statut !== 'actif') {
-                router.push('/pending-validation');
-              } else if (data.user.role === 'donateur') {
-                router.push('/donateur');
-              } else {
-                router.push('/');
-              }
-            } else {
-              setIsLogin(true);
-            }
+          if (data.user.role === 'personnel' && data.user.statut !== 'actif') {
+            router.push('/pending-validation');
+          } else if (data.user.role === 'donateur') {
+            router.push('/donateur');
+          } else {
+            router.push('/');
           }
         } else {
-          setMessage(data.message || "Erreur d'inscription");
+          setIsLogin(true);
         }
       }
     } catch (error) {
