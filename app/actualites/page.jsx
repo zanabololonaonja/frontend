@@ -10,7 +10,7 @@ export default function ActualitesPage() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [searchTerm, setSearchTerm] = useState('');
-
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
   // Récupérer toutes les actualités PUBLIÉES
   const fetchActualites = async () => {
     try {
@@ -18,7 +18,10 @@ export default function ActualitesPage() {
       setError('');
       
       console.log('🔄 Chargement des actualités...');
-      const response = await fetch('http://localhost:5000/api/actualites');
+      const response = await fetch(`${API_URL}/api/actualites`, {
+        cache: 'no-store' // ✅ éviter cache Vercel
+      });
+      
       
       console.log('📡 Statut de la réponse:', response.status);
       
