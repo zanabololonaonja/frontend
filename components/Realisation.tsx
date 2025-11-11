@@ -27,33 +27,33 @@ const publicationsData = {
     },
     // Ajout des 6 réalisations supplémentaires
     {
-      title: "Projet Innovation Technologique 2024",
-      cover: "/projet5.jpg",
+      title: "Un programme innovant de pré-incubation en entrepreneuriat destiné aux étudiants de l’Université de Fianarantsoa",
+      cover: "/gasikaraFR.png",
       pdf: "/projet5.pdf",
     },
     {
       title: "Programme d'Éducation Digitale",
-      cover: "/projet6.jpg",
+      cover: "/mahatsangyFR.png",
       pdf: "/projet6.pdf",
     },
     {
       title: "Centre de Formation Professionnelle",
-      cover: "/projet7.jpg",
+      cover: "/hachatonFR.png",
       pdf: "/projet7.pdf",
     },
     {
       title: "Initiative Environnementale Durable",
-      cover: "/projet8.jpg",
+      cover: "/FEEfr.png",
       pdf: "/projet8.pdf",
     },
     {
       title: "Projet Entrepreneuriat Féminin",
-      cover: "/projet9.jpg",
+      cover: "/manakaraFR.png",
       pdf: "/projet9.pdf",
     },
     {
       title: "Programme Jeunesse et Innovation",
-      cover: "/projet10.jpg",
+      cover: "/fdFR.png",
       pdf: "/projet10.pdf",
     },
   ],
@@ -81,32 +81,32 @@ const publicationsData = {
     // Ajout des 6 réalisations supplémentaires
     {
       title: "Technological Innovation Project 2024",
-      cover: "/projet5.jpg",
+      cover: "/gasikaraEN.png",
       pdf: "/projet5.pdf",
     },
     {
       title: "Digital Education Program",
-      cover: "/projet6.jpg",
+      cover: "/mahatsangyEN.png",
       pdf: "/projet6.pdf",
     },
     {
       title: "Professional Training Center",
-      cover: "/projet7.jpg",
+      cover: "/hachatonEN.png",
       pdf: "/projet7.pdf",
     },
     {
       title: "Sustainable Environmental Initiative",
-      cover: "/projet8.jpg",
+      cover: "/feeEN.png",
       pdf: "/projet8.pdf",
     },
     {
       title: "Women Entrepreneurship Project",
-      cover: "/projet9.jpg",
+      cover: "/manakaraEN.png",
       pdf: "/projet9.pdf",
     },
     {
       title: "Youth and Innovation Program",
-      cover: "/projet10.jpg",
+      cover: "/fdEN.png",
       pdf: "/projet10.pdf",
     },
   ],
@@ -134,36 +134,37 @@ const publicationsData = {
     // Ajout des 6 réalisations supplémentaires
     {
       title: "Tetikasa Innovation Teknologika 2024",
-      cover: "/projet5.jpg",
+      cover: "/gasikareaMG.png",
       pdf: "/projet5.pdf",
     },
     {
       title: "Programa Fanabeazana Nomérika",
-      cover: "/projet6.jpg",
+      cover: "/mahatsangyMG.png",
       pdf: "/projet6.pdf",
     },
     {
       title: "Foiben'ny Fampiofanana Matihanina",
-      cover: "/projet7.jpg",
+      cover: "/hachatonMG.png",
       pdf: "/projet7.pdf",
     },
     {
       title: "Fikambanana Mpiaro ny Tontolo iainana",
-      cover: "/projet8.jpg",
+      cover: "/FEEmg.png",
       pdf: "/projet8.pdf",
     },
     {
       title: "Tetikasa Entrepreneuriat Vehivavy",
-      cover: "/projet9.jpg",
+      cover: "/manakaraMG.png",
       pdf: "/projet9.pdf",
     },
     {
       title: "Programa Tanora sy Innovation",
-      cover: "/projet10.jpg",
+      cover: "/fdMG.jpg",
       pdf: "/projet10.pdf",
     },
   ],
 };
+
 
 // Textes multilingues pour la section
 const sectionTexts = {
