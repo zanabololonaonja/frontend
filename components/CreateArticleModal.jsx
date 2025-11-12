@@ -83,7 +83,10 @@ export default function CreateArticleModal({ isOpen, onClose, onArticleCreated }
         formData.append('images', image);
         formData.append('articleId', 'temp'); // ID temporaire, sera mis à jour après création de l'article
 
-        const response = await fetch('http://localhost:5000/api/upload/article-images', {
+        // ✅ Correct
+const response = await fetch(`${API_URL}/api/upload/article-images`, {
+
+
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -143,7 +146,9 @@ export default function CreateArticleModal({ isOpen, onClose, onArticleCreated }
 
       console.log('📦 Payload envoyé:', payload);
 
-      const response = await fetch('http://localhost:5000/api/actualites', {
+      // ✅ Correct
+const response = await fetch(`${API_URL}/api/actualites`, {
+
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
