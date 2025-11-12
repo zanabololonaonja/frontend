@@ -12,7 +12,8 @@ export default function CreateArticleModal({ isOpen, onClose, onArticleCreated }
   const [loading, setLoading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState({});
   const fileInputRef = useRef(null);
-
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
   // Gestion de la sélection des fichiers
   const handleImageSelect = (e) => {
     const files = Array.from(e.target.files);

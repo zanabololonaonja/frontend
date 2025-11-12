@@ -152,7 +152,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
                   <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
                     ONG
                   </div>
-                  <span className="ml-2 text-lg font-semibold text-gray-900">Solidarité</span>
+                  <span className="ml-2 text-lg font-semibold text-gray-900">Ndao Hifanosika</span>
                 </div>
               </div>
 
@@ -227,7 +227,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
                   <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
                     ONG
                   </div>
-                  <span className="ml-2 text-lg font-semibold text-gray-900">Solidarité</span>
+                  <span className="ml-2 text-lg font-semibold text-gray-900">Ndao hifanosika</span>
                 </div>
               </div>
 
