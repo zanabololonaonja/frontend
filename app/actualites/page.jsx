@@ -12,6 +12,29 @@ export default function ActualitesPage() {
   const [searchTerm, setSearchTerm] = useState('');
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
   // Récupérer toutes les actualités PUBLIÉES
+  useEffect(() => {
+  const testBackend = async () => {
+    const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+    console.log('🌐 Test du backend avec l\'URL:', API_URL);
+
+    try {
+      const response = await fetch(`${API_URL}/api/actualites`, { cache: 'no-store' });
+      console.log('📡 Statut de la réponse:', response.status);
+
+      if (!response.ok) {
+        throw new Error(`Erreur ${response.status}: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      console.log('✅ Backend accessible. Données reçues:', data);
+    } catch (err) {
+      console.error('❌ Impossible de contacter le backend:', err);
+    }
+  };
+
+  testBackend();
+}, []);
+
   const fetchActualites = async () => {
     try {
       setLoading(true);
