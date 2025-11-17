@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
-import { AuthProvider } from "@/contexts/AuthContext"; // Ajouter cette importation
+import { AuthProvider } from "@/contexts/AuthContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,6 +12,9 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   title: "ONG Ndao hifanosika",
+  verification: {
+    google: "iQTccMzdQoLAeGy6aF2N3XFe-vVt1rGZhlQPFt1upCU",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -22,7 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="antialiased">
         <LanguageProvider>
-          <AuthProvider> {/* Ajouter AuthProvider ici */}
+          <AuthProvider>
             {children}
           </AuthProvider>
         </LanguageProvider>
