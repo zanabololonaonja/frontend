@@ -12,9 +12,6 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   title: "ONG Ndao hifanosika",
-  verification: {
-    google: "iQTccMzdQoLAeGy6aF2N3XFe-vVt1rGZhlQPFt1upCU",
-  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -22,6 +19,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="fr">
       <head>
         <link rel="icon" href="/logo.jpg" />
+        {/* Ajoute directement la balise Google ici */}
+        <meta name="google-site-verification" content="iQTccMzdQoLAeGy6aF2N3XFe-vVt1rGZhlQPFt1upCU" />
       </head>
       <body className="antialiased">
         <LanguageProvider>
